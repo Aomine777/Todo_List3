@@ -1,10 +1,19 @@
 package com.example.Todo_List3.services;
 
 import com.example.Todo_List3.entities.Note;
+import com.example.Todo_List3.repository.NoteRepository;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.*;
-
+@Service
 public class NoteCrudServiceImpl implements NoteCrudService {
+    @Autowired
+    private NoteRepository noteRepository;
+
+    public Note save(Note note) {
+        return noteRepository.save(note);
+    }
     private Map<Long, Note> notes = new HashMap<>();
     @Override
     public List<Note> listAll() {

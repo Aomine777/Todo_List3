@@ -5,7 +5,7 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 @Service
-public interface NoteCrudService {
+public interface NoteCrudService{
     List<Note> listAll();
     Note add(Note note);
     void deleteById(long id);
